@@ -1,0 +1,82 @@
+
+.businessForm {
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+}
+.particularForm {
+    margin-left: 2rem;
+    margin-top: 4.5rem;
+}
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+}
+.texts {
+    font-family: 'Rubik', sans-serif;
+    margin-left: 0.3rem;
+}
+.tellUs {
+    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
+}
+p {
+    font-size: 14px;
+    color: gray;
+    font-weight: 300;
+}
+
+.userType {
+    font-size: 12px;
+}
+
+input {
+    margin: 0.3rem;
+    padding: 0.9rem;
+    border-radius: 0.3rem;
+    width: 27.8%;
+    background-color: #f3f4f7;
+    border: none;
+    font-family:'Rubik', sans-serif; 
+    font-weight: 500;
+    color: #828d92;
+}
+
+.half-width-input {
+    display: flex;
+    flex-direction: row;
+    width: 44.8%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
+    
+}
+.SaveData {
+    background-color: #0A2463;
+    color: white;
+    border: none;
+    font-family:'Rubik', sans-serif ;
+    padding: 0.8rem;
+    width: 10%;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    
+}
+.goBack {
+    background-color: white;
+    color: #cccccc;
+    border-radius: 0.3rem;
+    font-family:'Rubik', sans-serif ;
+    width: 10%;
+    border: 0.12rem solid lightgray;
+    cursor: pointer;
+    margin-right: 8.3rem;
+
+}
