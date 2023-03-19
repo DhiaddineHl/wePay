@@ -1,0 +1,61 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    margin: 0.3rem;
+    padding: 0.9rem;
+    border-radius: 0.3rem;
+    background-color: #f3f4f7;
+    border: none;
+    font-family:'Rubik', sans-serif; 
+    font-weight: 500;
+    color: #828d92;
+}
+
+.login {
+    background-color: #0A2463;
+    color: white;
+    border: none;
+    font-family:'Rubik', sans-serif ;
+    padding: 0.8rem;
+    width: 112%;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 0.3rem;
+  
+
+}
+
+
+
+.forgotPassword {
+    text-decoration: none;
+    color: #0A2463;
+    font-size: 14px;
+    margin-top: 1rem;
+}
+.registerNow {
+    text-decoration: none;
+    color: #0A2463;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 200;
+    color: #828d92;
+}

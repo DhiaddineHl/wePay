@@ -15,15 +15,15 @@ export default class ParticularForm extends Component {
               <p className='informations'>
                 These are intial informations about your store,<br></br> you can change them anytime!
               </p>
-          </div>
+        </div>
           <form  className='form' action="">
             <input type="text" placeholder='Full Name' />
             <input type="text" placeholder='Email' />
             <input type="text" placeholder='Password' />
             <input type="text" placeholder='Country' />
             <div className="half-width-input">
-              <input type="text" placeholder='ZIP Code' />
-              <input type="text" placeholder='City' />
+              <input type="text" placeholder='ZIP Code' className='zip-code'/>
+              <input type="text" placeholder='City' className='city' />
             </div>
             <input type="text" placeholder='Adress' />
             <div className="buttons">

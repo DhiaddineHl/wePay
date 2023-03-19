@@ -1,31 +1,55 @@
-
+:root {
+    --btn-primary : #0A2463;
+    --paragraph-color : grey;
+    --input-color : #f3f4f7;
+    --font-primary : 'Rubik', sans-serif;
+}
 .businessForm {
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-top: 1.5rem;
 }
+
 .particularForm {
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-top: 4.5rem;
 }
 
-
-
 .form {
-    display: flex;
+    display:flex;
     flex-direction: column;
-    font-family: 'Rubik', sans-serif;
+    width: 30%;
 }
-.texts {
-    font-family: 'Rubik', sans-serif;
-    margin-left: 0.3rem;
+
+.half-width-input {
+    width: 100%;
 }
+.zip-code {
+    width: 40%;
+}
+
+.city {
+    width: 40%;
+}
+
 .tellUs {
     margin-top: 0.5rem;
-    margin-bottom: 0.7rem;
 }
+
+
+
+
+
+
+
+
+.texts {
+    font-family: var(--font-primary);
+    margin-left: 0.3rem;
+}
+
 p {
     font-size: 14px;
-    color: gray;
+    color: var(--paragraph-color);
     font-weight: 300;
 }
 
@@ -34,10 +58,10 @@ p {
 }
 
 input {
+    width: auto;
     margin: 0.3rem;
     padding: 0.9rem;
     border-radius: 0.3rem;
-    width: 27.8%;
     background-color: #f3f4f7;
     border: none;
     font-family:'Rubik', sans-serif; 
@@ -45,17 +69,14 @@ input {
     color: #828d92;
 }
 
-.half-width-input {
-    display: flex;
-    flex-direction: row;
-    width: 44.8%;
-}
 
 .buttons {
     display: flex;
     flex-direction: row;
     margin-top: 0.3rem;
     margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    justify-content: space-between;
     
 }
 .SaveData {
@@ -64,7 +85,7 @@ input {
     border: none;
     font-family:'Rubik', sans-serif ;
     padding: 0.8rem;
-    width: 10%;
+    width: 30%;
     border-radius: 0.3rem;
     cursor: pointer;
     
@@ -74,9 +95,14 @@ input {
     color: #cccccc;
     border-radius: 0.3rem;
     font-family:'Rubik', sans-serif ;
-    width: 10%;
-    border: 0.12rem solid lightgray;
+    width: 30%;
+    border: 0.15rem solid lightgray;
     cursor: pointer;
     margin-right: 8.3rem;
 
 }
+
+
+
+
+
