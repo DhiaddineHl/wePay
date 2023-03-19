@@ -26,8 +26,8 @@ export default class BusinessForm extends Component {
               <input type="text" placeholder='ZIP Code' />
               <input type="text" placeholder='City' />
             </div>
-            <input type="text" placeholder='Email' />
-            <input type="text" placeholder='Password' />
+            <input type="email" placeholder='Email' />
+            <input type="password" placeholder='Password' />
             <div className="buttons">
               <button className='goBack'>Go Back</button>
               <button type="submit" className='SaveData'>Save</button>

@@ -18,8 +18,8 @@ export default class ParticularForm extends Component {
         </div>
           <form  className='form' action="">
             <input type="text" placeholder='Full Name' />
-            <input type="text" placeholder='Email' />
-            <input type="text" placeholder='Password' />
+            <input type="email" placeholder='Email' />
+            <input type="password" placeholder='Password' />
             <input type="text" placeholder='Country' />
             <div className="half-width-input">
               <input type="text" placeholder='ZIP Code' className='zip-code'/>
