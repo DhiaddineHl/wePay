@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+
+import React from 'react'
 import './formStyle.css'
 
-export default class ParticularForm extends Component {
-  render() {
-    return (
-      <div className='particularForm'>
+const ParticularForm = () => {
+  return (
+    <div className='particularForm'>
         <div className="texts">
               <span className='userType'>
                 Particular
@@ -32,6 +32,7 @@ export default class ParticularForm extends Component {
             </div>
           </form>
       </div>
-    )
-  }
+  )
 }
+
+export default ParticularForm
