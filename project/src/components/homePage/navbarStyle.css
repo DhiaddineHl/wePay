@@ -1,0 +1,50 @@
+:root {
+    --color-primary : #0a2463;
+    --font-primary : 'Rubik', sans-serif;
+    --font-color-primary : white;
+    --font-weight-primary : 300;
+    --font-size : 18px;
+    --brand-font-weight : 30px;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--font-color-primary);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-primary);
+}
+
+.brand {
+    font-size: var(--brand-font-weight);
+    padding: 1.3rem;
+    margin-left: 6rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    
+}
+li {
+    list-style: none;
+    margin-right: 6rem;
+}
+
+.logout{
+    margin-right: 6rem;
+    border: none;
+    background-color: transparent;
+    color: var(--font-color-primary);
+    font-family: var(--font-primary);
+    font-size: var(--font-size);
+    cursor: pointer;
+}
+
+.icon {
+    margin-right: 0.3rem;
+    position: relative;
+}

@@ -1,0 +1,31 @@
+:root {
+    --color-primary : #0a2463;
+    --font-primary : 'Rubik', sans-serif;
+    --font-color-primary : white;
+    --font-weight-primary : 300;
+    --font-size : 18px;
+    
+}
+
+body {
+    background-color: #f7f5f0;
+}
+
+.box {
+    border-radius: 0.5rem;
+    background-color: white;
+    width: 50%;
+    margin: 2rem;
+
+    
+}
+
+.boxHeader {
+    padding: 2rem;
+    font-family: var(--font-primary);
+}
+
+.boxBody {
+    padding: 2rem;
+}
+
