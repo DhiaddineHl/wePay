@@ -7,16 +7,14 @@ import Navbar from './components/homePage/NavBar'
 import OperationBox from './components/homePage/OperationBox'
 import BalanceBox from './components/homePage/BalanceBox'
 import SendPage from './pages/SendPage'
+import Footer from './components/homePage/Footer'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-    
-    <Navbar></Navbar>
-    </>
+    <Footer></Footer>
   )
 }
 

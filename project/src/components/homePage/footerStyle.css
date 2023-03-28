@@ -1,0 +1,43 @@
+:root {
+    --color-primary : #0a2463;
+    --font-primary : 'Rubik', sans-serif;
+    --font-color-primary : white;
+    --font-weight-primary : 300;
+    --font-size : 18px;
+    --font-size-secondary : 14px; 
+    --brand-font-weight : 30px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--font-color-primary);
+    font-family: var(--font-primary);
+}
+
+.list {
+    display: flex;
+    padding: 1.8rem;
+    margin-left: 6rem;
+    
+}
+li {
+    list-style: inside;
+    margin-right: 2rem;
+}
+
+.rights {
+    margin-right: 6rem;
+}
+
+.brand {
+    font-size: var(--brand-font-weight);
+}
+
+p{
+    font-weight: var(--font-weight-primary);
+    font-size: var(--font-size-secondary);
+    margin-top: 0;
+}
