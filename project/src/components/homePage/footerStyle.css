@@ -17,13 +17,13 @@
     font-family: var(--font-primary);
 }
 
-.list {
+.footerlist {
     display: flex;
-    padding: 1.8rem;
+    padding: 1.3rem;
     margin-left: 6rem;
     
 }
-li {
+.footerlist li {
     list-style: inside;
     margin-right: 2rem;
 }
@@ -32,7 +32,7 @@ li {
     margin-right: 6rem;
 }
 
-.brand {
+.rightsbrand {
     font-size: var(--brand-font-weight);
 }
 

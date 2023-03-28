@@ -34,6 +34,12 @@ li {
     margin-right: 6rem;
 }
 
+.navbarlink {
+    text-decoration: none;
+    color: var(--font-color-primary);
+}
+
+
 .logout{
     margin-right: 6rem;
     border: none;

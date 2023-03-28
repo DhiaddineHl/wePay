@@ -13,7 +13,7 @@ const SendPage = () => {
       <Navbar></Navbar>
       <div className="pageBody"
       style={{display : 'flex', justifyContent : 'center', marginBottom : 'auto'}}>
-        <OperationBox></OperationBox>
+        <OperationBox heading='Send'></OperationBox>
         <BalanceBox></BalanceBox>
       </div>
       <Footer></Footer>
