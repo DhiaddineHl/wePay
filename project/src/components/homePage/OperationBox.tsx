@@ -4,14 +4,21 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import Grid from '@mui/material/Grid';
 
-const OperationBox = () => {
+
+interface Props {
+  heading : string
+}
+
+const OperationBox = ({ heading }: Props) => {
 
   
   return (
     
       <div className="box">
           <div className="boxHeader">
-              <span className="operation">Send</span>
+              <span className="operation">
+                {heading}
+              </span>
           </div>
           <div className="boxBody">
                 <div className="input">
@@ -32,7 +39,9 @@ const OperationBox = () => {
                   </Grid>
                 </Grid>
               </div>
-              <button className='submit'>Send</button>
+              <button className='submit'>
+                {heading}
+              </button>
           </div>
       </div>
     

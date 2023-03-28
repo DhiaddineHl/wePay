@@ -1,5 +1,6 @@
 import React from 'react'
 import BalanceBox from '../components/homePage/BalanceBox'
+import Footer from '../components/homePage/Footer'
 import Navbar from '../components/homePage/NavBar'
 import OperationBox from '../components/homePage/OperationBox'
 
@@ -15,7 +16,7 @@ const SendPage = () => {
         <OperationBox></OperationBox>
         <BalanceBox></BalanceBox>
       </div>
-      
+      <Footer></Footer>
     </div>
     
   )
