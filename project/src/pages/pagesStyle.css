@@ -1,0 +1,4 @@
+.pageBody {
+    display: flex;
+    flex-direction: row;
+}

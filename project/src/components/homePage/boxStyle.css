@@ -4,6 +4,7 @@
     --font-color-primary : white;
     --font-weight-primary : 300;
     --font-size : 18px;
+    --font-size-secondary : 14px;
     
 }
 
@@ -14,18 +15,62 @@ body {
 .box {
     border-radius: 0.5rem;
     background-color: white;
-    width: 50%;
+    width: 40%;
     margin: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     
+}
+
+.balanceBox {
+    border-radius: 0.5rem;
+    background-color: white;
+    width: 25%;
+    margin: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .boxHeader {
     padding: 2rem;
     font-family: var(--font-primary);
+    border-bottom: 1px solid lightgray;
+}
+
+.operation, .title {
+    margin-left: 2rem;
 }
 
 .boxBody {
     padding: 2rem;
+    margin-left : 2rem
+}
+
+.input {
+    margin-bottom: 1rem;
+}
+
+
+.submit {
+        background-color: #0A2463;
+        color: white;
+        border: none;
+        font-family:'Rubik', sans-serif ;
+        padding: 0.8rem;
+        width: 90px;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        margin-top: 1rem;    
+}
+
+.balance {
+    font-family: var(--font-primary);
+    font-size: 30px;
+}
+
+p {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-primary);
+    font-size: var(--font-size-secondary);
+    margin-top: .3rem;
 }
 
