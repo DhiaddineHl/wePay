@@ -64,7 +64,7 @@ input {
     border-radius: 0.3rem;
     background-color: #f3f4f7;
     border: none;
-    font-family:'Rubik', sans-serif; 
+    font-family:var(--font-primary); 
     font-weight: 500;
     color: #828d92;
 }
@@ -83,7 +83,7 @@ input {
     background-color: #0A2463;
     color: white;
     border: none;
-    font-family:'Rubik', sans-serif ;
+    font-family: var(--font-primary);
     padding: 0.8rem;
     width: 30%;
     border-radius: 0.3rem;
@@ -94,7 +94,7 @@ input {
     background-color: white;
     color: #cccccc;
     border-radius: 0.3rem;
-    font-family:'Rubik', sans-serif ;
+    font-family:var(--font-primary);
     width: 30%;
     border: 0.15rem solid lightgray;
     cursor: pointer;
