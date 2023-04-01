@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './boxStyle.css'
 import { Avatar } from '@mui/material'
+import Activities from "../../data/activities.json"
 
 import axios from 'axios'
 
@@ -22,11 +23,11 @@ interface Activity {
 
 const ActivitiesBox = () => {
 
-    const [operations, setOperations] = useState<Activity[]>([]);
+   /*  const [operations, setOperations] = useState<Activity[]>([]);
     useEffect(() => {
         axios.get<Activity[]>('http://localhost:8080/activities')
         .then(res =>setOperations(res.data))
-    }, [])
+    }, []) */
 
 
   return (
@@ -37,7 +38,7 @@ const ActivitiesBox = () => {
             </span>
         </div>
         <div className="boxBody" style={{margin :"0", padding : "0"}}>
-            {operations.map(op =>
+            {Activities.map(op =>
             <div className="boxItem" key={op.user.name}>
                 <Avatar>{op.user.name[0]}</Avatar>
                 <div style={{display : "flex", justifyContent : "space-between", width : "90%"}}>
