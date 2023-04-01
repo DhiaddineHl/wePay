@@ -8,7 +8,7 @@ const RequestPage = () => {
   return (
     <div className="page"
     style={{display : 'flex', flexDirection: 'column', minHeight : '100vh'}}>
-      <Navbar></Navbar>
+      
       <div className="pageBody"
       style={{display : 'flex', justifyContent : 'center', marginBottom : 'auto'}}>
         <OperationBox heading='Request'></OperationBox>

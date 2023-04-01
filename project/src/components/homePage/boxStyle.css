@@ -70,6 +70,7 @@ button[disabled] {
 .balance {
     font-family: var(--font-primary);
     font-size: 30px;
+    font-weight: var(--font-weight-primary);
 }
 
 p {
@@ -83,4 +84,22 @@ p {
     color: red;
 }
 
+.boxItem {
+    font-family: var(--font-primary);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding: 1.5rem;
+}
+.boxItem-last {
+    font-family: var(--font-primary);
+    display: flex;
+    align-items: center;
+    
+    padding: 1.5rem;
+}
+
+.name {
+    margin-left: 1rem;
+}
 

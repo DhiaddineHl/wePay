@@ -1,9 +1,6 @@
 import { useState } from "react";
 
-import ParticularForm from "./components/forms/registration/particularForm";
-import BusinessForm from './components/forms/businessForm'
-import LoginForm from './components/forms/LoginForm'
-import ParticularForm from './components/forms/particularForm'
+
 import Navbar from './components/homePage/NavBar'
 import OperationBox from './components/homePage/OperationBox'
 import BalanceBox from './components/homePage/BalanceBox'
@@ -19,6 +16,7 @@ function App() {
   return (
     <>
     <div className="contetnt">
+      <Navbar></Navbar>
       <Routes>
         <Route path='/dashboard' Component={Dashboard}></Route>
         <Route path='/send' Component={SendPage}></Route>
