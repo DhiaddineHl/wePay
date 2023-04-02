@@ -16,7 +16,7 @@ function App() {
   return (
     <>
     <div className="contetnt">
-      <Navbar></Navbar>
+      
       <Routes>
         <Route path='/dashboard' Component={Dashboard}></Route>
         <Route path='/send' Component={SendPage}></Route>

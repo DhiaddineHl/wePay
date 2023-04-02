@@ -2,10 +2,7 @@ import React from 'react'
 import './boxStyle.css'
 import { Avatar } from '@mui/material'
 import { blueGrey, deepOrange, deepPurple } from '@mui/material/colors'
-
-
-
-
+import Activities from "../../data/activities.json"
 
 
 const ResendBox = () => {
@@ -17,6 +14,7 @@ const ResendBox = () => {
             </span>
         </div>
         <div className="boxBody" style={{margin :"0", padding : "0"}}>
+            
             <div className="boxItem">
                 <Avatar sx={{ bgcolor : deepPurple[500]}}>DB</Avatar>
                 <span className="name">Dorra BHK</span>

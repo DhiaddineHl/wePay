@@ -1,8 +1,11 @@
 import React from 'react'
 import './boxStyle.css'
+import { useNavigate } from 'react-router-dom'
 
 const BalanceDashboard = () => {
     
+    const navigate = useNavigate();
+
 
   return (
     <div className="balanceBox" style={{width : "40%"}}>
@@ -18,8 +21,8 @@ const BalanceDashboard = () => {
             <p>
                 Estimated total of all currencies
             </p>
-            <button className="submit" style={{marginRight : '1rem'}}>Send</button>
-            <button className="submit">Request</button>
+            <button className="submit" style={{marginRight : '1rem'}} onClick={() => navigate('/send')}>Send</button>
+            <button className="submit" onClick={() => navigate('/request')}>Request</button>
         </div>
     </div>
   )

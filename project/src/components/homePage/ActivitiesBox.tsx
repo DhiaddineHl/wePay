@@ -31,7 +31,7 @@ const ActivitiesBox = () => {
 
 
   return (
-    <div className="box" style={{width : "70%", marginTop :"0"}}>
+    <div className="box" style={{width : "69vw", marginTop :"0"}}>
         <div className="boxHeader">
             <span className='title'>
                 Recent Activities
@@ -41,7 +41,7 @@ const ActivitiesBox = () => {
             {Activities.map(op =>
             <div className="boxItem" key={op.user.name}>
                 <Avatar>{op.user.name[0]}</Avatar>
-                <div style={{display : "flex", justifyContent : "space-between", width : "90%"}}>
+                <div style={{display : "flex", justifyContent : "space-between", width : "93%"}}>
                     <div style={{display : "flex", flexDirection: "column", justifyContent: "center"}}>
                         <span className="name">{op.user.name}</span>
                         <span style={{fontWeight : "300", marginLeft: "1rem"}}>{op.date}</span>
