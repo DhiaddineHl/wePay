@@ -3,9 +3,9 @@ import {useForm} from 'react-hook-form'
 import {z} from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import './boxStyle.css'
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import Grid from '@mui/material/Grid';
+
+
+import { Box, HStack, Input } from '@chakra-ui/react'
 
 
 const schema = z.object({
@@ -32,25 +32,12 @@ const OperationBox = ({ heading }: Props) => {
           <div className="boxBody">
                 <form onSubmit={handleSubmit(data => console.log(data))}>
                   <div className="input">
-                  <Grid container spacing={3}>
-                    <Grid item>
-                      <TextField {...register('email')} id="standard-basic" label="Email Address" variant="standard"/>
-                      {errors.email && <p className='error-message'>{errors.email.message}</p> }
-                    </Grid>
-                    <Grid item>
-                      <TextField
-                        {...register('amount', {valueAsNumber : true})}
-                        label="Amount"
-                        id="standard-start-adornment"
-                        sx={{ m: 0, width: '10ch' }}
-                        InputProps={{
-                        startAdornment: <InputAdornment position="start">$</InputAdornment>,
-                  
-                        }}
-                        variant="standard"/>
-                        {errors.amount && <p className='error-message'>{errors.amount.message}</p> }
-                    </Grid>
-                  </Grid>
+                    <HStack>
+                    <Input variant="flushed" placeholder="E-mail" _placeholder={{opacity : "0.2", color : "inherit"}} ></Input>
+                    <Box width={8}></Box>
+                    <Input variant="flushed" type="number" placeholder="Amount" _placeholder={{opacity : "0.2", color : "inherit"}} htmlFor={16} width="auto"></Input>
+                    </HStack>
+                    
                   </div>
                   <button className='submit' disabled={!isValid}>
                     {heading}

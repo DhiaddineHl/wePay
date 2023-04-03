@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './boxStyle.css'
-import { Avatar } from '@mui/material'
+
 import Activities from "../../data/activities.json"
 
 import axios from 'axios'
@@ -40,7 +40,7 @@ const ActivitiesBox = () => {
         <div className="boxBody" style={{margin :"0", padding : "0"}}>
             {Activities.map(op =>
             <div className="boxItem" key={op.user.name}>
-                <Avatar>{op.user.name[0]}</Avatar>
+                
                 <div style={{display : "flex", justifyContent : "space-between", width : "93%"}}>
                     <div style={{display : "flex", flexDirection: "column", justifyContent: "center"}}>
                         <span className="name">{op.user.name}</span>

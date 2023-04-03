@@ -9,18 +9,31 @@ import Footer from './components/homePage/Footer'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import RequestPage from './pages/RequestPage'
+import BusinessRegistration from "./pages/views/registration/business-registration";
+import ParticularRegistration from "./pages/views/registration/particular-registration";
+import FrontPage from "./pages/views/front-page/front-page";
+import Login from "./pages/views/login/login";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    
     <div className="contetnt">
       
       <Routes>
         <Route path='/dashboard' Component={Dashboard}></Route>
         <Route path='/send' Component={SendPage}></Route>
         <Route path='/request' Component={RequestPage}></Route>
+        <Route path="/" element={<FrontPage />}></Route>
+      <Route path="login" element={<Login />}></Route>
+      <Route
+        path="registration/business"
+        element={<BusinessRegistration />}></Route>
+      <Route
+        path="registration/particular"
+        element={<ParticularRegistration />}></Route>
       </Routes>
     </div>
     </>
