@@ -33,13 +33,15 @@ const OperationBox = ({ heading }: Props) => {
                 <form onSubmit={handleSubmit(data => console.log(data))}>
                   <div className="input">
                     <HStack>
-                    <Input variant="flushed" placeholder="E-mail" _placeholder={{opacity : "0.2", color : "inherit"}} ></Input>
+                    <Input {...register("email")} variant="flushed" placeholder="E-mail" _placeholder={{opacity : "0.2", color : "inherit"}} ></Input>
+                    
                     <Box width={8}></Box>
-                    <Input variant="flushed" type="number" placeholder="Amount" _placeholder={{opacity : "0.2", color : "inherit"}} htmlFor={16} width="auto"></Input>
+                    <Input {...register("amount")} variant="flushed" type="number" placeholder="Amount" _placeholder={{opacity : "0.2", color : "inherit"}}  width="auto"></Input>
+                    
                     </HStack>
                     
                   </div>
-                  <button className='submit' disabled={!isValid}>
+                  <button className='submit'>
                     {heading}
                   </button>
                 </form>

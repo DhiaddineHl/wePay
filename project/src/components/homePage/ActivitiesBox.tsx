@@ -41,13 +41,13 @@ const ActivitiesBox = () => {
             {Activities.map(op =>
             <div className="boxItem" key={op.user.name}>
                 
-                <div style={{display : "flex", justifyContent : "space-between", width : "93%"}}>
+                <div style={{display : "flex", justifyContent : "space-between", width : "97%"}}>
                     <div style={{display : "flex", flexDirection: "column", justifyContent: "center"}}>
                         <span className="name">{op.user.name}</span>
                         <span style={{fontWeight : "300", marginLeft: "1rem"}}>{op.date}</span>
                     </div>
                     <span>
-                        <span style={{fontWeight : "300", fontSize : "25px"}}>{op.operation.type === 'send'? "-" : "+"}{op.operation.amount}$</span> <b style={{fontSize : "25px"}}>CAD</b>
+                        <span style={{fontWeight : "300", fontSize : "25px"}}>{op.operation.type === 'send'? "-" : "+"}{op.operation.amount}</span> <b style={{fontSize : "25px"}}>TND</b>
                     </span>
                 </div>
             </div>

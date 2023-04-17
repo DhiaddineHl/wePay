@@ -19,7 +19,7 @@ import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const ResetPassword = () => {
   const loginSchema = Yup.object().shape({
     email: Yup.string().email("*Invalid email").required("*No email provided."),
     password: Yup.string().required("*No Password provided."),
@@ -31,7 +31,7 @@ const LoginForm = () => {
     <Box maxW="24rem">
       <Center>
         <Heading mb={8} as="h2" fontSize="28" color="text-header">
-          Welcome back!{" "}
+          Change your password{" "}
         </Heading>
       </Center>
 
@@ -68,7 +68,21 @@ const LoginForm = () => {
                   name="password"
                   variant="filled"
                   focusBorderColor="primary.600"
-                  placeholder="Password"
+                  placeholder="New password"
+                  _placeholder={{
+                    opacity: 0.3,
+                    color: "inherit",
+                  }}></Field>
+                {errors.password && touched.password ? (
+                  <Text color="red">{errors.password}</Text>
+                ) : null}
+                <Field
+                  as={PasswordInput}
+                  id="password"
+                  name="password"
+                  variant="filled"
+                  focusBorderColor="primary.600"
+                  placeholder="Confirm the new password"
                   _placeholder={{
                     opacity: 0.3,
                     color: "inherit",
@@ -86,13 +100,11 @@ const LoginForm = () => {
                     w="100%">
                     Save
                   </Button>
-                  <Button variant="link" colorScheme="primary" onClick={() => navigate('/reset')} >
-                    Forgot Password?
-                  </Button>
+                  
                   <HStack>
-                    <Text>Don't have an account yet?</Text>
-                    <Button variant="link" colorScheme="primary" onClick={() => navigate('/registration/particular')}>
-                      Register!
+                    
+                    <Button variant="link" colorScheme="primary" onClick={() => navigate('/login')}>
+                      Go back to login page
                     </Button>
                   </HStack>
                 </VStack>
@@ -105,4 +117,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default ResetPassword ;

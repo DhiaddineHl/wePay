@@ -9,7 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="navBar">
-        <div className="brand">
+        <div className="brand" onClick={() => navigate('/')}>
             <b>We</b>Pay
         </div>
         <ul className="links">

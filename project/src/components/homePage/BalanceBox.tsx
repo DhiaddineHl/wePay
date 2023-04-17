@@ -11,7 +11,7 @@ const BalanceBox = () => {
         </div>
         <div className="boxBody">
             <span className="balance">
-                35.20 $ <b>CAD</b>
+                35.20  <b>TND</b>
             </span>
             <p>
                 Estimated total of all currencies

@@ -13,6 +13,8 @@ import BusinessRegistration from "./pages/views/registration/business-registrati
 import ParticularRegistration from "./pages/views/registration/particular-registration";
 import FrontPage from "./pages/views/front-page/front-page";
 import Login from "./pages/views/login/login";
+import ResetPassword from "./components/forms/resetPassword/ResetPassword";
+import Reset from "./pages/views/reset/reset";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,6 +36,9 @@ function App() {
       <Route
         path="registration/particular"
         element={<ParticularRegistration />}></Route>
+      <Route
+        path="reset"
+        element={<Reset/>}></Route>
       </Routes>
     </div>
     </>
