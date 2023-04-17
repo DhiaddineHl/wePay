@@ -10,6 +10,7 @@ import {
   Flex,
   Spacer,
   FormControl,
+  HStack,
 } from "@chakra-ui/react";
 import { MdOutlineKeyboardReturn } from "react-icons/md";
 import PasswordInput from "../../../shared/password-input/password-input";
@@ -156,6 +157,12 @@ const BusinessForm = () => {
                     Save
                   </Button>
                 </Flex>
+                <HStack>
+                    <Text>Already have an account yet?</Text>
+                    <Button variant="link" colorScheme="primary" onClick={() => navigate('/Login')}>
+                      Login!
+                    </Button>
+                </HStack>
               </Stack>
             </FormControl>
           </form>

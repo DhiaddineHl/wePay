@@ -41,7 +41,7 @@ const Hero = () => {
           </Text>
         </Container>
         <Button
-          onClick={() => navigate("/registration/particular")}
+          onClick={() => navigate("/registration")}
           variant="outline"
           size="lg"
           colorScheme="dark"

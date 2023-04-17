@@ -15,6 +15,7 @@ import FrontPage from "./pages/views/front-page/front-page";
 import Login from "./pages/views/login/login";
 import ResetPassword from "./components/forms/resetPassword/ResetPassword";
 import Reset from "./pages/views/reset/reset";
+import Registration from "./pages/views/registration/particular-registration";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,11 +32,8 @@ function App() {
         <Route path="/" element={<FrontPage />}></Route>
       <Route path="login" element={<Login />}></Route>
       <Route
-        path="registration/business"
-        element={<BusinessRegistration />}></Route>
-      <Route
-        path="registration/particular"
-        element={<ParticularRegistration />}></Route>
+        path="registration"
+        element={<Registration />}></Route>
       <Route
         path="reset"
         element={<Reset/>}></Route>

@@ -91,7 +91,7 @@ const LoginForm = () => {
                   </Button>
                   <HStack>
                     <Text>Don't have an account yet?</Text>
-                    <Button variant="link" colorScheme="primary" onClick={() => navigate('/registration/particular')}>
+                    <Button variant="link" colorScheme="primary" onClick={() => navigate('/registration')}>
                       Register!
                     </Button>
                   </HStack>
