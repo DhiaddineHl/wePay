@@ -17,7 +17,7 @@ import ResetPassword from "./components/forms/resetPassword/ResetPassword";
 import Reset from "./pages/views/reset/reset";
 import Registration from "./pages/views/registration/particular-registration";
 import InputField from "./shared/password-input/input-field";
-import InputBox from "./components/forms/inputs/InputFiels";
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,9 +42,6 @@ function App() {
       <Route
         path="reset"
         element={<Reset/>}></Route>
-      <Route
-        path="test"
-        element={<InputBox placeHolder="Name" />}></Route>
       </Routes>
     </div>
     </>
