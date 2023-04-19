@@ -18,6 +18,7 @@ import PasswordInput from "../../../shared/password-input/password-input";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginForm = () => {
   const loginSchema = Yup.object().shape({
@@ -42,7 +43,11 @@ const LoginForm = () => {
           password: "",
         }}
         onSubmit={(values, { resetForm }) => {
-          console.log(JSON.stringify(values, null, 2));
+          axios.post("http://localhost:8080/auth/authenticate")
+          .then(res =>
+            console.log(JSON.stringify(values, null, 2))
+          )
+          
           resetForm();
         }}>
         {({ handleSubmit, errors, touched }) => (
@@ -91,7 +96,7 @@ const LoginForm = () => {
                   </Button>
                   <HStack>
                     <Text>Don't have an account yet?</Text>
-                    <Button variant="link" colorScheme="primary" onClick={() => navigate('/registration')}>
+                    <Button variant="link" colorScheme="primary" onClick={() => navigate('/particularreg')}>
                       Register!
                     </Button>
                   </HStack>

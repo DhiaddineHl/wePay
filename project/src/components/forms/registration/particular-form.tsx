@@ -18,6 +18,8 @@ import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import InputBox from "../inputs/InputFiels";
+import { FieldValues, useForm } from "react-hook-form";
 
 const ParticularForm = () => {
   const registrationSchema = Yup.object().shape({
@@ -37,13 +39,34 @@ const ParticularForm = () => {
       .required("*No last name provided."),
   });
 
-  const navigate = useNavigate();
+
+    const navigate = useNavigate();
+    
 
   return (
     <Box maxW="24rem">
-      <Heading mb={2} as="h6" fontSize="14px" color="text-header">
-        PARTICULAR
-      </Heading>
+      <HStack>
+      <Button
+          onClick={() => navigate("/particularreg")}
+          variant="ghost"
+          fontWeight="bold"
+          fontSize="16px"
+          colorScheme="dark"
+          >
+          Particular
+        </Button>
+        <Box w={1} />
+        <Button
+          onClick={() => navigate("/businessreg")}
+          variant="ghost"
+          fontWeight="bold"
+          fontSize="16px"
+          colorScheme="dark"
+          color={"lightgrey"}
+          >
+          Business
+        </Button>
+      </HStack>
       <Heading mb={2} as="h2" fontSize="28" color="text-header">
         Tell us about yourself!{" "}
       </Heading>
@@ -56,15 +79,15 @@ const ParticularForm = () => {
         initialValues={{
           email: "",
           password: "",
-          phone: "",
-          firstName: "",
-          lastName: "",
+          phoneNumber: "",
+          firstname: "",
+          lastname: "",
         }}
         onSubmit={(values, { resetForm }) => {
           axios
             .post(
-              "http://localhost:8080/api/v1/auth/register",
-              JSON.stringify(values, null, 2)
+              "http://localhost:8080/auth/register",
+              //JSON.stringify(values, null, 2)
             )
             .then(function (response) {
               console.log(response);
@@ -89,8 +112,8 @@ const ParticularForm = () => {
                   placeholder="First name"
                   _placeholder={{ opacity: 0.3, color: "inherit" }}
                 />
-                {errors.firstName && touched.firstName ? (
-                  <Text color="red">{errors.firstName}</Text>
+                {errors.firstname && touched.firstname ? (
+                  <Text color="red">{errors.firstname}</Text>
                 ) : null}
                 <Field
                   as={Input}
@@ -102,8 +125,8 @@ const ParticularForm = () => {
                   placeholder="Last name"
                   _placeholder={{ opacity: 0.3, color: "inherit" }}
                 />
-                {errors.lastName && touched.lastName ? (
-                  <Text color="red">{errors.lastName}</Text>
+                {errors.lastname && touched.lastname ? (
+                  <Text color="red">{errors.lastname}</Text>
                 ) : null}
                 <InputGroup size="lg">
                   <InputLeftAddon children="+216" />
@@ -117,8 +140,8 @@ const ParticularForm = () => {
                     _placeholder={{ opacity: 0.3, color: "inherit" }}
                   />
                 </InputGroup>
-                {errors.phone && touched.phone ? (
-                  <Text color="red">{errors.phone}</Text>
+                {errors.phoneNumber && touched.phoneNumber ? (
+                  <Text color="red">{errors.phoneNumber}</Text>
                 ) : null}
                 <Field
                   as={Input}
@@ -170,7 +193,7 @@ const ParticularForm = () => {
                   </Button>
                 </Flex>
                   <HStack>
-                    <Text>Already have an account yet?</Text>
+                    <Text>Already have an account?</Text>
                     <Button variant="link" colorScheme="primary" onClick={() => navigate('/Login')}>
                       Login!
                     </Button>

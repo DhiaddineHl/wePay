@@ -16,6 +16,8 @@ import Login from "./pages/views/login/login";
 import ResetPassword from "./components/forms/resetPassword/ResetPassword";
 import Reset from "./pages/views/reset/reset";
 import Registration from "./pages/views/registration/particular-registration";
+import InputField from "./shared/password-input/input-field";
+import InputBox from "./components/forms/inputs/InputFiels";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,11 +34,17 @@ function App() {
         <Route path="/" element={<FrontPage />}></Route>
       <Route path="login" element={<Login />}></Route>
       <Route
-        path="registration"
-        element={<Registration />}></Route>
+        path="particularreg"
+        element={<ParticularRegistration />}></Route>
+      <Route
+        path="businessreg"
+        element={<BusinessRegistration />}></Route>
       <Route
         path="reset"
         element={<Reset/>}></Route>
+      <Route
+        path="test"
+        element={<InputBox placeHolder="Name" />}></Route>
       </Routes>
     </div>
     </>

@@ -11,7 +11,7 @@ const Navbar = () => {
         <Heading>WePay</Heading>
         <Spacer />
         <Button
-          onClick={() => navigate("/registration/particular")}
+          onClick={() => navigate("/particularreg")}
           variant="ghost"
           fontWeight="normal"
           fontSize="20px"
@@ -20,7 +20,7 @@ const Navbar = () => {
         </Button>
         <Box w={20} />
         <Button
-          onClick={() => navigate("/registration/business")}
+          onClick={() => navigate("/businessreg")}
           variant="ghost"
           fontWeight="normal"
           fontSize="20px"

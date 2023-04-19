@@ -10,16 +10,23 @@ import {
   Box,
 } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+
+
+  const navigate = useNavigate();
+
+
   return (
+    <>
     <Center bg="dark.900" paddingBlock={8} paddingInline={40}>
       <Flex width="100%">
         <HStack spacing={10}>
-          <Button color="white" variant="link" fontWeight="400">
+          <Button color="white" variant="link" fontWeight="400" onClick={()=> navigate('/businessreg')}>
             ● Business
           </Button>
-          <Button color="white" variant="link" fontWeight="400">
+          <Button color="white" variant="link" fontWeight="400" onClick={()=> navigate('/particularreg')} >
             ● Particular
           </Button>
           <Button color="white" variant="link" fontWeight="400">
@@ -41,6 +48,7 @@ const Footer = () => {
         </VStack>
       </Flex>
     </Center>
+    </>
   );
 };
 

@@ -5,31 +5,18 @@ import LeftPanel from "../../../components/forms/registration/left-panel";
 import BusinessForm from "../../../components/forms/registration/business-form";
 import { useNavigate } from "react-router-dom";
 
-const Registration = () => {
+const ParticularRegistration = () => {
 
   const navigate = useNavigate();
 
   return (
     <Grid templateColumns="1fr 60%">
       <Center>
-      <Tabs variant='soft-rounded' colorScheme='blue'>
-        <TabList>
-          <Tab>Particular</Tab>
-          <Tab>Business</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <ParticularForm></ParticularForm>
-          </TabPanel>
-          <TabPanel>
-            <BusinessForm></BusinessForm>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
+          <ParticularForm></ParticularForm>   
       </Center>
       <LeftPanel></LeftPanel>
     </Grid>
   );
 };
 
-export default Registration;
+export default ParticularRegistration;

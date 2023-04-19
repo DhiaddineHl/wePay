@@ -40,9 +40,27 @@ const BusinessForm = () => {
 
   return (
     <Box maxW="24rem">
-      <Heading mb={2} as="h6" fontSize="14px" color="text-header">
-        BUSINESS
-      </Heading>
+      <HStack>
+      <Button
+          onClick={() => navigate("/particularreg")}
+          variant="ghost"
+          fontWeight="bold"
+          fontSize="16px"
+          colorScheme="dark"
+          color={'lightgrey'}
+          >
+          Particular
+        </Button>
+        <Box w={1} />
+        <Button
+          onClick={() => navigate("/businessreg")}
+          variant="ghost"
+          fontWeight="bold"
+          fontSize="16px"
+          colorScheme="dark">
+          Business
+        </Button>
+      </HStack>
       <Heading mb={2} as="h2" fontSize="28" color="text-header">
         Tell us about your store!
       </Heading>
@@ -158,7 +176,7 @@ const BusinessForm = () => {
                   </Button>
                 </Flex>
                 <HStack>
-                    <Text>Already have an account yet?</Text>
+                    <Text>Already have an account?</Text>
                     <Button variant="link" colorScheme="primary" onClick={() => navigate('/Login')}>
                       Login!
                     </Button>
