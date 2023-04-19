@@ -43,9 +43,14 @@ const LoginForm = () => {
           password: "",
         }}
         onSubmit={(values, { resetForm }) => {
-          axios.post("http://localhost:8080/auth/authenticate")
-          .then(res =>
+          axios.post("http://localhost:8080/auth/authenticate", values)
+          .then(res =>{
+
             console.log(JSON.stringify(values, null, 2))
+            const token = res.data.token;
+            localStorage.setItem('token', token);
+            navigate('/dashboard');
+          }
           )
           
           resetForm();

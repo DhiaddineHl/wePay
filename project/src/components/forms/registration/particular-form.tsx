@@ -18,7 +18,6 @@ import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import InputBox from "../inputs/InputFiels";
 import { FieldValues, useForm } from "react-hook-form";
 
 const ParticularForm = () => {
