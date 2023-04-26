@@ -78,18 +78,21 @@ const ParticularForm = () => {
         initialValues={{
           email: "",
           password: "",
-          phoneNumber: "",
-          firstname: "",
-          lastname: "",
+          phone: "",
+          firstName: "",
+          lastName: "",
         }}
         onSubmit={(values, { resetForm }) => {
           axios
             .post(
-              "http://localhost:8080/auth/register",
+              "http://localhost:8080/auth/register", values
               //JSON.stringify(values, null, 2)
             )
             .then(function (response) {
               console.log(response);
+              const token = response.data.token;
+              localStorage.setItem('token', token);
+              navigate('/dashboard');
             })
             .catch(function (error) {
               console.log(error);
@@ -111,8 +114,8 @@ const ParticularForm = () => {
                   placeholder="First name"
                   _placeholder={{ opacity: 0.3, color: "inherit" }}
                 />
-                {errors.firstname && touched.firstname ? (
-                  <Text color="red">{errors.firstname}</Text>
+                {errors.firstName && touched.firstName ? (
+                  <Text color="red">{errors.firstName}</Text>
                 ) : null}
                 <Field
                   as={Input}
@@ -124,8 +127,8 @@ const ParticularForm = () => {
                   placeholder="Last name"
                   _placeholder={{ opacity: 0.3, color: "inherit" }}
                 />
-                {errors.lastname && touched.lastname ? (
-                  <Text color="red">{errors.lastname}</Text>
+                {errors.lastName && touched.lastName ? (
+                  <Text color="red">{errors.lastName}</Text>
                 ) : null}
                 <InputGroup size="lg">
                   <InputLeftAddon children="+216" />
@@ -139,8 +142,8 @@ const ParticularForm = () => {
                     _placeholder={{ opacity: 0.3, color: "inherit" }}
                   />
                 </InputGroup>
-                {errors.phoneNumber && touched.phoneNumber ? (
-                  <Text color="red">{errors.phoneNumber}</Text>
+                {errors.phone && touched.phone ? (
+                  <Text color="red">{errors.phone}</Text>
                 ) : null}
                 <Field
                   as={Input}
