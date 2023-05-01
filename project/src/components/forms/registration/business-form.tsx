@@ -17,6 +17,7 @@ import PasswordInput from "../../../shared/password-input/password-input";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const BusinessForm = () => {
   const registrationSchema = Yup.object().shape({
@@ -78,6 +79,20 @@ const BusinessForm = () => {
           industry: "",
         }}
         onSubmit={(values, { resetForm }) => {
+          axios
+            .post(
+              "http://localhost:8080/api/v1/auth/register/business", values
+              //JSON.stringify(values, null, 2)
+            )
+            .then(function (response) {
+              console.log(response);
+              const token = response.data.token;
+              localStorage.setItem('token', token);
+              navigate('/dashboard');
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           console.log(JSON.stringify(values, null, 2));
           resetForm();
         }}>

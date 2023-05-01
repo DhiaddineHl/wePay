@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './boxStyle.css'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 const BalanceDashboard = () => {
     
     const navigate = useNavigate();
+    const [balance, setBalance] = useState(null)
+    const token = localStorage.getItem('token')
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+
+    useEffect(() => {
+        axios.get("/api/users/balance", {
+        })
+        .then(res => {
+            console.log(res.data)
+            setBalance(res.data) 
+        })
+
+    },[token])
+
+    
 
 
   return (
@@ -16,7 +33,7 @@ const BalanceDashboard = () => {
         </div>
         <div className="boxBody">
             <span className="balance">
-                35.20  <b>TND</b>
+                {balance} <b>TND</b>
             </span>
             <p>
                 Estimated total of all currencies
