@@ -85,13 +85,15 @@ const ParticularForm = () => {
         onSubmit={(values, { resetForm }) => {
           axios
             .post(
-              "http://localhost:8080/auth/register", values
+              "/api/v1/auth/register/particular", values
               //JSON.stringify(values, null, 2)
             )
             .then(function (response) {
               console.log(response);
-              const token = response.data.token;
+              const token = response.data.access_token;
+              const userId = response.data.id;
               localStorage.setItem('token', token);
+              localStorage.setItem('userId', userId);
               navigate('/dashboard');
             })
             .catch(function (error) {

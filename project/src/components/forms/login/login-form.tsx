@@ -43,12 +43,14 @@ const LoginForm = () => {
           password: "",
         }}
         onSubmit={(values, { resetForm }) => {
-          axios.post("http://localhost:8080/auth/authenticate", values)
+          axios.post("/api/v1/auth/authenticate", values)
           .then(res =>{
 
             console.log(JSON.stringify(values, null, 2))
-            const token = res.data.token;
+            const token = res.data.access_token;
+            const userId = res.data.id;
             localStorage.setItem('token', token);
+            localStorage.setItem('userId', userId);
             navigate('/dashboard');
           }
           )

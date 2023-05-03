@@ -81,13 +81,15 @@ const BusinessForm = () => {
         onSubmit={(values, { resetForm }) => {
           axios
             .post(
-              "http://localhost:8080/api/v1/auth/register/business", values
+              "/api/v1/auth/register/business", values
               //JSON.stringify(values, null, 2)
             )
             .then(function (response) {
               console.log(response);
               const token = response.data.token;
+              const userId = response.data.id;
               localStorage.setItem('token', token);
+              localStorage.setItem('userId',userId)
               navigate('/dashboard');
             })
             .catch(function (error) {

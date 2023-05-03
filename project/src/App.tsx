@@ -17,20 +17,27 @@ import ResetPassword from "./components/forms/resetPassword/ResetPassword";
 import Reset from "./pages/views/reset/reset";
 import Registration from "./pages/views/registration/particular-registration";
 import InputField from "./shared/password-input/input-field";
+import ProtectedRoute from "./components/Protected";
+import Protected from "./components/Protected";
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
 
   return (
     <>
-    
-    <div className="contetnt">
-      
+    <div className="contetnt"> 
       <Routes>
-        <Route path='/dashboard' Component={Dashboard}></Route>
-        <Route path='/send' Component={SendPage}></Route>
-        <Route path='/request' Component={RequestPage}></Route>
+        <Route element={<Protected></Protected>}>
+           <Route element={<Dashboard />} path="/dashboard" />
+        </Route>
+        <Route element={<Protected></Protected>}>
+           <Route element={<SendPage />} path="/send" />
+        </Route>
+        <Route element={<Protected></Protected>}>
+           <Route element={<RequestPage />} path="/request" />
+        </Route>
         <Route path="/" element={<FrontPage />}></Route>
       <Route path="login" element={<Login />}></Route>
       <Route

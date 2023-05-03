@@ -8,18 +8,20 @@ import axios from 'axios'
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const handleLogout = () =>{
-    const token = localStorage.getItem('token');
-    console.log(token)
-    axios.post("http://localhost:8080/auth/logout")
-    .then( res =>{
-            const token = res.data.token;
-            localStorage.setItem('token', token);
-            navigate('/')
-    }
-    )
 
-  }
+  
+  const handleLogout = () =>{
+    localStorage.clear();
+    navigate("/")
+    // const token = localStorage.getItem('token');
+    // console.log(token)
+    // axios.post("http://localhost:8080/auth/logout")
+    // .then( res =>{
+    //         const token = res.data.token;
+    //         localStorage.setItem('token', token);
+    //         navigate('/')
+    }
+ 
 
 
 

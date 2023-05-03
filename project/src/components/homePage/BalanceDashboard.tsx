@@ -8,18 +8,20 @@ const BalanceDashboard = () => {
     const navigate = useNavigate();
     const [balance, setBalance] = useState(null)
     const token = localStorage.getItem('token')
+    const userID = localStorage.getItem('userId');
+    const userId = userID?.toString();
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
 
     useEffect(() => {
-        axios.get("/api/users/balance", {
+        axios.get("/api/v1/users/balance/"+userId, {
         })
         .then(res => {
             console.log(res.data)
             setBalance(res.data) 
         })
 
-    },[token])
+    },[token, userID])
 
     
 
