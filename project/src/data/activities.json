@@ -1,9 +1,0 @@
-[
-
-
-{"date":"2023-04-01","operation":{"type":"send","amount":25.0},"user":{"name":"Aziz Mahfoudh"}},
-{"date":"2023-04-01","operation":{"type":"request","amount":230.0},"user":{"name":"Dhiaddine Hlaoui"}},
-{"date":"2023-04-01","operation":{"type":"send","amount":30.0},"user":{"name":"Dorra Bel Haj Kalboussi"}}
-
-
-]

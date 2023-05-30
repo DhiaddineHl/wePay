@@ -1,37 +1,13 @@
-import React, { useEffect, useState } from 'react'
+
 import './boxStyle.css'
-
-import Activities from "../../data/activities.json"
-
-import axios from 'axios'
-
-
-
-
-interface Operation {
-    Date : string
-    StoreName : string
-    Amount : string
-    Currency : string
-    
-}
+import useActivities from '../../hooks/useActivities'
 
 const ActivitiesBox = () => {
 
-     const [operations, setOperations] = useState<Operation[]>([]);
     const userId = localStorage.getItem("userId");
     const userID = userId?.toString();
-    const token = localStorage.getItem('token')
 
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-
-    useEffect(() => {
-        axios.get<Operation[]>("/api/v1/payment/payments/formatted/"+userID , {
-
-        })
-        .then(res =>setOperations(res.data))
-    }, [token, userID]) 
-
+    const {data : operations} = useActivities(userID);
 
   return (
     <div className="box" style={{width : "69vw", marginTop :"0"}}>
@@ -41,7 +17,7 @@ const ActivitiesBox = () => {
             </span>
         </div>
         <div className="boxBody" style={{margin :"0", padding : "0"}}>
-            {operations.map(op =>
+            {operations?.map(op =>
             <div className="boxItem" key={op.StoreName}>
                 
                 <div style={{display : "flex", justifyContent : "space-between", width : "97%"}}>
