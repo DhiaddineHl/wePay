@@ -19,6 +19,11 @@ import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
+import useLogin from "../../../hooks/useLogin";
+
+
+
 
 const LoginForm = () => {
   const loginSchema = Yup.object().shape({
@@ -26,7 +31,12 @@ const LoginForm = () => {
     password: Yup.string().required("*No Password provided."),
   });
 
+
+  const loginUser = useLogin();
+
   const navigate = useNavigate();
+
+
 
   return (
     <Box maxW="24rem">
@@ -43,19 +53,11 @@ const LoginForm = () => {
           password: "",
         }}
         onSubmit={(values, { resetForm }) => {
-          axios.post("/api/v1/auth/authenticate", values)
-          .then(res =>{
 
-            console.log(JSON.stringify(values, null, 2))
-            const token = res.data.access_token;
-            const userId = res.data.id;
-            localStorage.setItem('token', token);
-            localStorage.setItem('userId', userId);
-            navigate('/dashboard');
-          }
-          )
-          
-          resetForm();
+          loginUser.mutate({
+            email : values.email,
+            password : values.password
+          })
         }}>
         {({ handleSubmit, errors, touched }) => (
           <form onSubmit={handleSubmit}>
