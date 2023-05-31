@@ -12,6 +12,7 @@ import {
   AbsoluteCenter,
   FormControl,
   HStack,
+  Spinner
 } from "@chakra-ui/react";
 import { MdOutlineKeyboardReturn } from "react-icons/md";
 import PasswordInput from "../../../shared/password-input/password-input";
@@ -97,8 +98,9 @@ const LoginForm = () => {
                     mb={6}
                     size="lg"
                     colorScheme="primary"
-                    w="100%">
-                    Save
+                    w="100%"
+                    disabled={loginUser.isLoading}>
+                    {loginUser.isLoading ? <Spinner /> : "Login"}
                   </Button>
                   <Button variant="link" colorScheme="primary" onClick={() => navigate('/reset')} >
                     Forgot Password?
