@@ -14,17 +14,11 @@ import {
   HStack,
   Spinner
 } from "@chakra-ui/react";
-import { MdOutlineKeyboardReturn } from "react-icons/md";
 import PasswordInput from "../../../shared/password-input/password-input";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useQueryClient, useMutation } from "@tanstack/react-query";
 import useLogin from "../../../hooks/useLogin";
-
-
-
 
 const LoginForm = () => {
   const loginSchema = Yup.object().shape({
@@ -32,12 +26,9 @@ const LoginForm = () => {
     password: Yup.string().required("*No Password provided."),
   });
 
-
   const loginUser = useLogin();
 
   const navigate = useNavigate();
-
-
 
   return (
     <Box maxW="24rem">
@@ -54,7 +45,6 @@ const LoginForm = () => {
           password: "",
         }}
         onSubmit={(values, { resetForm }) => {
-
           loginUser.mutate({
             email : values.email,
             password : values.password

@@ -11,6 +11,7 @@ import {
   Spacer,
   FormControl,
   HStack,
+  Spinner,
 } from "@chakra-ui/react";
 import { MdOutlineKeyboardReturn } from "react-icons/md";
 import PasswordInput from "../../../shared/password-input/password-input";
@@ -18,8 +19,12 @@ import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import useRegisterBusiness from "../../../hooks/useRegisterBusiness";
+
+
 
 const BusinessForm = () => {
+
   const registrationSchema = Yup.object().shape({
     email: Yup.string().email("*Invalid email").required("*No email provided."),
     password: Yup.string()
@@ -38,6 +43,8 @@ const BusinessForm = () => {
   });
 
   const navigate = useNavigate();
+
+  const registerBusiness = useRegisterBusiness();
 
   return (
     <Box maxW="24rem">
@@ -79,24 +86,13 @@ const BusinessForm = () => {
           industry: "",
         }}
         onSubmit={(values, { resetForm }) => {
-          axios
-            .post(
-              "/api/v1/auth/register/business", values
-              //JSON.stringify(values, null, 2)
-            )
-            .then(function (response) {
-              console.log(response);
-              const token = response.data.token;
-              const userId = response.data.id;
-              localStorage.setItem('token', token);
-              localStorage.setItem('userId',userId)
-              navigate('/dashboard');
+            registerBusiness.mutate({
+              storeName : values.storeName,
+              industry : values.industry,
+              phone : values.phone,
+              email : values.email,
+              password : values.password
             })
-            .catch(function (error) {
-              console.log(error);
-            });
-          console.log(JSON.stringify(values, null, 2));
-          resetForm();
         }}>
         {({ handleSubmit, errors, touched }) => (
           <form onSubmit={handleSubmit}>
@@ -130,7 +126,7 @@ const BusinessForm = () => {
                 ) : null}
                 <InputGroup size="lg">
                   <InputLeftAddon children="+216" />
-                  <Field
+                  <Input
                     as={Input}
                     id="phone"
                     name="phone"
@@ -188,8 +184,9 @@ const BusinessForm = () => {
                     loadingText="Submitting"
                     mt={4}
                     size="lg"
-                    colorScheme="primary">
-                    Save
+                    colorScheme="primary"
+                    disabled={registerBusiness.isLoading}>
+                    {registerBusiness.isLoading ? <Spinner /> : "Regsiter"}   
                   </Button>
                 </Flex>
                 <HStack>

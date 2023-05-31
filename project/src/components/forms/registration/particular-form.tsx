@@ -11,6 +11,7 @@ import {
   Spacer,
   FormControl,
   HStack,
+  Spinner,
 } from "@chakra-ui/react";
 import { MdOutlineKeyboardReturn } from "react-icons/md";
 import PasswordInput from "../../../shared/password-input/password-input";
@@ -19,6 +20,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FieldValues, useForm } from "react-hook-form";
+import useRegisterParticular from "../../../hooks/useRegsiterParticular";
 
 const ParticularForm = () => {
   const registrationSchema = Yup.object().shape({
@@ -38,10 +40,10 @@ const ParticularForm = () => {
       .required("*No last name provided."),
   });
 
-
     const navigate = useNavigate();
-    
 
+    const registerParticular = useRegisterParticular();
+    
   return (
     <Box maxW="24rem">
       <HStack>
@@ -83,24 +85,13 @@ const ParticularForm = () => {
           lastName: "",
         }}
         onSubmit={(values, { resetForm }) => {
-          axios
-            .post(
-              "/api/v1/auth/register/particular", values
-              //JSON.stringify(values, null, 2)
-            )
-            .then(function (response) {
-              console.log(response);
-              const token = response.data.access_token;
-              const userId = response.data.id;
-              localStorage.setItem('token', token);
-              localStorage.setItem('userId', userId);
-              navigate('/dashboard');
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          console.log(JSON.stringify(values, null, 2));
-          resetForm();
+          registerParticular.mutate({
+            firstName : values.firstName,
+            lastName : values.lastName,
+            phone : values.phone,
+            email : values.email,
+            password : values.password
+          })
         }}>
         {({ handleSubmit, errors, touched }) => (
           <form onSubmit={handleSubmit}>
@@ -134,7 +125,7 @@ const ParticularForm = () => {
                 ) : null}
                 <InputGroup size="lg">
                   <InputLeftAddon children="+216" />
-                  <Field
+                  <Input
                     as={Input}
                     id="phone"
                     name="phone"
@@ -192,8 +183,9 @@ const ParticularForm = () => {
                     loadingText="Submitting"
                     mt={4}
                     size="lg"
-                    colorScheme="primary">
-                    Save
+                    colorScheme="primary"
+                    disabled={registerParticular.isLoading}>
+                    {registerParticular.isLoading ? <Spinner /> : "Regsiter"}                   
                   </Button>
                 </Flex>
                   <HStack>
