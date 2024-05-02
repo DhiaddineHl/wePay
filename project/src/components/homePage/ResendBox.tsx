@@ -1,7 +1,4 @@
-import React from 'react'
 import './boxStyle.css'
-
-import Activities from "../../data/activities.json"
 
 
 const ResendBox = () => {

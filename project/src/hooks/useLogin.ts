@@ -2,17 +2,17 @@ import { useMutation } from "@tanstack/react-query"
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import { useToast } from '@chakra-ui/react'
+import authClient from "../services/authClient";
 
 
 
-interface Credentials {
+interface AuthRequest {
     email : string,
     password : string
   }
   
   interface Response {
     access_token : string,
-    id : string
   }
 
 const useLogin = () => {
@@ -21,22 +21,24 @@ const useLogin = () => {
     const toast  = useToast();
 
     return useMutation({
-        mutationFn : (user : Credentials) =>
-          axios
-          .post<Response>("/api/v1/auth/authenticate", user)
+        mutationFn : (request : AuthRequest) =>
+          authClient
+          .post<Response>("login", request)
           .then(res =>{ 
             localStorage.setItem('token', res.data.access_token)
-            localStorage.setItem('userId', res.data.id)
-            navigate('/dashboard')
+
           }),
-          onSuccess : () =>
-          toast({
-            title: 'Welcome Again',
-            description: "You signed in successfully",
-            status: 'success',
-            duration: 5000,
-            isClosable: true,
-          })
+          onSuccess : () => {
+            navigate('/dashboard')
+            toast({
+              title: 'Welcome Again',
+              description: "You signed in successfully",
+              status: 'success',
+              duration: 5000,
+              isClosable: true,
+            })
+          }
+            
           }
       )
 

@@ -4,17 +4,17 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
-interface UserInformations {
-    storeName : string,
-    industry : string,
+interface RegisterRequest {
+    name : string,
+    business_name : string,
     phone : string,
     email : string,
-    password : string
+    password : string,
+    tax_registration_number : string
 }
 
 interface Response {
     access_token : string,
-    id : string
 }
 
 const useRegisterBusiness = () => {
@@ -23,12 +23,11 @@ const useRegisterBusiness = () => {
     const toast  = useToast();
 
     return useMutation({
-        mutationFn : (user : UserInformations) =>
+        mutationFn : (request : RegisterRequest) =>
           axios
-          .post<Response>("/api/v1/auth/register/particular", user)
+          .post<Response>("register-business", request)
           .then(res =>{ 
             localStorage.setItem('token', res.data.access_token)
-            localStorage.setItem('userId', res.data.id)
             navigate('/dashboard')
           }),
           onSuccess : () =>

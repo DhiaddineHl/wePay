@@ -1,9 +1,7 @@
-import React from 'react'
 import BalanceBox from '../components/homePage/BalanceBox'
 import Footer from '../components/homePage/Footer'
 import Navbar from '../components/homePage/NavBar'
 import OperationBox from '../components/homePage/OperationBox'
-import ActivitiesBox from '../components/homePage/ActivitiesBox'
 
 
 const SendPage = () => {
@@ -12,13 +10,13 @@ const SendPage = () => {
     <div className="page"
     style={{display : 'flex', flexDirection: 'column', minHeight : '100vh'}}>
       
-      <Navbar></Navbar>
+      <Navbar/>
       <div className="pageBody"
       style={{display : 'flex', justifyContent : 'center', marginBottom : 'auto'}}>
-        <OperationBox heading='Send'></OperationBox>
-        <BalanceBox></BalanceBox>
+        <OperationBox heading='Send'/>
+        <BalanceBox/>
       </div>
-      <Footer></Footer>
+      <Footer/>
     </div>
     
   )

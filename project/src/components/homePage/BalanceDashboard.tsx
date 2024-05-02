@@ -1,16 +1,12 @@
-
+import useBalance from '../../hooks/useBalance';
 import './boxStyle.css'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios';
-import useBalance from '../../hooks/useBalance';
+
 
 const BalanceDashboard = () => {
     
     const navigate = useNavigate();
-
-    const userID = localStorage.getItem('userId');
-    const userId = userID?.toString();
-    const {data : balance} = useBalance(userId);
+    const {data : balance} = useBalance();
 
   return (
     <div className="balanceBox" style={{width : "40%"}}>

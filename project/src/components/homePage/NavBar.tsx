@@ -1,8 +1,7 @@
-import React from 'react'
 import './navbarStyle.css'
 import { BsGear } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+
 
 
 
@@ -13,19 +12,7 @@ const Navbar = () => {
   const handleLogout = () =>{
     localStorage.clear();
     navigate("/")
-    // const token = localStorage.getItem('token');
-    // console.log(token)
-    // axios.post("http://localhost:8080/auth/logout")
-    // .then( res =>{
-    //         const token = res.data.token;
-    //         localStorage.setItem('token', token);
-    //         navigate('/')
     }
- 
-
-
-
-
 
   return (
     <nav className="navBar">

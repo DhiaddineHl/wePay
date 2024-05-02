@@ -16,8 +16,8 @@ const Dashboard = () => {
       style={{display : 'flex', flexDirection : "column", marginBottom : 'auto'}}>
         <div className="bodyOne" style={{display : 'flex', justifyContent : 'center'}} >
 
-          <BalanceDashboard></BalanceDashboard>
-          <ResendBox></ResendBox>
+          <BalanceDashboard/>
+          <ResendBox/>
         </div>
       <div className="bodyTwo" style={{display : 'flex', justifyContent : 'center'}} >
         <ActivitiesBox></ActivitiesBox>

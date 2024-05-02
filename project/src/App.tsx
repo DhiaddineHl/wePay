@@ -1,11 +1,4 @@
-import { useState } from "react";
-
-
-import Navbar from './components/homePage/NavBar'
-import OperationBox from './components/homePage/OperationBox'
-import BalanceBox from './components/homePage/BalanceBox'
 import SendPage from './pages/SendPage'
-import Footer from './components/homePage/Footer'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import RequestPage from './pages/RequestPage'
@@ -13,11 +6,7 @@ import BusinessRegistration from "./pages/views/registration/business-registrati
 import ParticularRegistration from "./pages/views/registration/particular-registration";
 import FrontPage from "./pages/views/front-page/front-page";
 import Login from "./pages/views/login/login";
-import ResetPassword from "./components/forms/resetPassword/ResetPassword";
 import Reset from "./pages/views/reset/reset";
-import Registration from "./pages/views/registration/particular-registration";
-import InputField from "./shared/password-input/input-field";
-import ProtectedRoute from "./components/Protected";
 import Protected from "./components/Protected";
 
 
