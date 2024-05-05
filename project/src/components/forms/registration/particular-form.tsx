@@ -22,27 +22,37 @@ import { useNavigate } from "react-router-dom";
 import { FieldValues, useForm } from "react-hook-form";
 import useRegisterParticular from "../../../hooks/useRegsiterParticular";
 
+interface ParticularFormProps {
+  name: string;
+  email: string;
+  password: string;
+  ICN : string;
+}
+
 const ParticularForm = () => {
   const registrationSchema = Yup.object().shape({
     email: Yup.string().email("*Invalid email").required("*No email provided."),
     password: Yup.string()
       .required("*No Password provided.")
       .min(6, "*Password should be at least 6 characters long."),
-    phone: Yup.string()
-      .matches(/[1-9]/, "*Doesn't look like a valid number.")
-      .max(15, "Too Long!")
-      .required("*No phone number provided."),
-    firstName: Yup.string()
+    ICN: Yup.string()
+      .min(6, "*ICN too short!")
+      .required("*No identity card number provided."),
+    name: Yup.string()
       .max(15, "*Too Long!")
-      .required("*No first name provided."),
-    lastName: Yup.string()
-      .max(15, "*Too Long!")
-      .required("*No last name provided."),
+      .required("*No name provided."),
   });
 
     const navigate = useNavigate();
 
     const registerParticular = useRegisterParticular();
+
+    const initialValues : ParticularFormProps = {
+      name : "",
+      email : "",
+      password : "",
+      ICN : ""
+    }
     
   return (
     <Box maxW="24rem">
@@ -77,21 +87,10 @@ const ParticularForm = () => {
       </Text>
       <Formik
         validationSchema={registrationSchema}
-        initialValues={{
-          email: "",
-          password: "",
-          phone: "",
-          firstName: "",
-          lastName: "",
-        }}
+        initialValues={initialValues}
         onSubmit={(values, { resetForm }) => {
-          registerParticular.mutate({
-            firstName : values.firstName,
-            lastName : values.lastName,
-            phone : values.phone,
-            email : values.email,
-            password : values.password
-          })
+          console.log(values);          
+          registerParticular.mutate(values)
         }}>
         {({ handleSubmit, errors, touched }) => (
           <form onSubmit={handleSubmit}>
@@ -99,44 +98,16 @@ const ParticularForm = () => {
               <Stack spacing={4}>
                 <Field
                   as={Input}
-                  id="firstName"
-                  name="firstName"
+                  id="name"
+                  name="name"
                   variant="filled"
                   size="lg"
                   focusBorderColor="primary.600"
-                  placeholder="First name"
+                  placeholder="Name"
                   _placeholder={{ opacity: 0.3, color: "inherit" }}
                 />
-                {errors.firstName && touched.firstName ? (
-                  <Text color="red">{errors.firstName}</Text>
-                ) : null}
-                <Field
-                  as={Input}
-                  id="lastName"
-                  name="lastName"
-                  variant="filled"
-                  size="lg"
-                  focusBorderColor="primary.600"
-                  placeholder="Last name"
-                  _placeholder={{ opacity: 0.3, color: "inherit" }}
-                />
-                {errors.lastName && touched.lastName ? (
-                  <Text color="red">{errors.lastName}</Text>
-                ) : null}
-                <InputGroup size="lg">
-                  <InputLeftAddon children="+216" />
-                  <Input
-                    as={Input}
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    focusBorderColor="primary.600"
-                    placeholder="Phone number"
-                    _placeholder={{ opacity: 0.3, color: "inherit" }}
-                  />
-                </InputGroup>
-                {errors.phone && touched.phone ? (
-                  <Text color="red">{errors.phone}</Text>
+                {errors.name && touched.name ? (
+                  <Text color="red">{errors.name}</Text>
                 ) : null}
                 <Field
                   as={Input}
@@ -150,6 +121,19 @@ const ParticularForm = () => {
                 />
                 {errors.email && touched.email ? (
                   <Text color="red">{errors.email}</Text>
+                ) : null}
+                <Field
+                  as={Input}
+                  id="ICN"
+                  name="ICN"
+                  variant="filled"
+                  size="lg"
+                  focusBorderColor="primary.600"
+                  placeholder="Identity card number"
+                  _placeholder={{ opacity: 0.3, color: "inherit" }}
+                />
+                {errors.ICN && touched.ICN ? (
+                  <Text color="red">{errors.ICN}</Text>
                 ) : null}
                 <Field
                   as={PasswordInput}

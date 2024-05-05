@@ -2,12 +2,11 @@ import { useToast } from "@chakra-ui/react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import authClient from "../services/authClient";
 
 
 interface RegisterRequest {
-    firstName : string,
-    lastName : string,
-    phone : string,
+    name : string,
     email : string,
     password : string,
     ICN  : string,
@@ -24,7 +23,7 @@ const useRegisterParticular = () => {
 
     return useMutation({
         mutationFn : (request : RegisterRequest) =>
-          axios
+          authClient
           .post<Response>("register-particular", request)
           .then(res =>{ 
             localStorage.setItem('token', res.data.access_token)

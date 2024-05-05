@@ -14,7 +14,7 @@ const Footer = () => {
                 <b>We</b>Pay
             </span>
             <p className="rightsReserved">
-                &copy; 2023 All rights reserved.
+                &copy; 2024 All rights reserved.
             </p>
         </div>
     </footer>
